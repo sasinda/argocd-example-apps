@@ -6,3 +6,8 @@ resources:
 - bar.yaml
 apiVersion: kustomize.config.k8s.io/v1beta1
 kind: Kustomization
+secretGenerator:
+- literals:
+  - db-password=12345
+  name: my-demo-1
+  type: Opaque
